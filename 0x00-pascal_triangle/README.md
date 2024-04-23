@@ -13,7 +13,37 @@ Create a function def pascal_triangle(n): that returns a list of lists of intege
 
 ## code snippet
 
-``` To be added when I'm done ```
+``` 
+#!/usr/bin/python3 
+""" 
+A Program which generate Pascal's Triangle when given 
+the number of rows. It returns a list of lists of integers 
+representing the Pascal's triangle of n(rows) 
+""" 
+ 
+def pascal_triangle(n): 
+    triangle_list = [] 
+    if n <= 0: 
+        return triangle_list 
+    i = 0 
+    while i < n: 
+        row = [] 
+        j = 0 
+        while j <= i: 
+            if i == 0 or j == 0: 
+                num = 1 
+            else: 
+                """ Here i used // to get integer instead of a float 
+                    and this formula num = (num * (i - j + 1)) // j is 
+                    used to generate the exact value on each row and column 
+                """ 
+                num = (num * (i - j + 1)) // j 
+            row.append(num) 
+            j += 1 
+        triangle_list.append(row) 
+        i += 1 
+    return triangle_list
+```
 
 ## Python file to test the program
 
@@ -34,4 +64,15 @@ def print_triangle(triangle):
  
 if __name__ == "__main__": 
     print_triangle(pascal_triangle(5)) 
+```
+
+## The output when i run the 0-main.py file
+```
+nguweneza@nguweneza-ThinkPad-T420s:~/ALX/alx-interview/0x00-pascal_triangle$ python3 0-main.py 
+[1]
+[1,1]
+[1,2,1]
+[1,3,3,1]
+[1,4,6,4,1]
+nguweneza@nguweneza-ThinkPad-T420s:~/ALX/alx-interview/0x00-pascal_triangle$ 
 ```
