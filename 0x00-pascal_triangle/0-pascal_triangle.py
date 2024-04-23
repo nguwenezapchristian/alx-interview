@@ -7,8 +7,8 @@ representing the Pascal's triangle of n(rows)
 
 
 def pascal_triangle(n):
-    triangle_list = []
     """ returns an empty list if n <= 0 """
+    triangle_list = []
     if n <= 0:
         return triangle_list
     i = 0
