@@ -5,6 +5,7 @@ the number of rows. It returns a list of lists of integers
 representing the Pascal's triangle of n(rows)
 """
 
+
 def pascal_triangle(n):
     triangle_list = []
     if n <= 0:
