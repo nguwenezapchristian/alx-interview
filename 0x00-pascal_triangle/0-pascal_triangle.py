@@ -16,7 +16,7 @@ def pascal_triangle(n):
         row = [1] * (i + 1)
         j = 1
         while j < i:
-            """ Here is used list comprehension in 
+            """ Here is used list comprehension in
             find the exact number for each position
             """
             row[j] = triangle_list[i - 1][j - 1] + triangle_list[i - 1][j]
