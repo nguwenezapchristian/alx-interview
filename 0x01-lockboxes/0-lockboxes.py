@@ -30,6 +30,8 @@ def canUnlockAll(boxes):
         visited.add(current_box)
         """checking if the current box index is not out of range"""
         if current_box < num_boxes:
-            keys_to_visit.extend(boxes[current_box])
+            keys_to_visit.extend(
+                key for key in boxes[current_box] if key not in visited
+                )
 
     return len(visited) == num_boxes
