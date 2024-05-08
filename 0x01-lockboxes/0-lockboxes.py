@@ -16,12 +16,12 @@ def canUnlockAll(boxes):
     - True if all boxes can be opened, else return False.
     """
 
-    if not boxes:
-        return False
+    # if not boxes:
+    #     return False
 
     num_boxes = len(boxes)
     visited = set()
-    keys_to_visit = [0]  # Start with the first box
+    keys_to_visit = [0]
 
     while keys_to_visit:
         current_box = keys_to_visit.pop(0)
