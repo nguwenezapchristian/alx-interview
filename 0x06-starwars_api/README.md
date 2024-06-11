@@ -10,7 +10,10 @@ This Node.js script uses the Star Wars API to retrieve information about charact
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/nguwenezapchristian/star-wars-characters.git
+   git clone https://github.com/nguwenezapchristian/alx-interview.git
+   ```
+   ```
+   cd 0x06-starwars_api
    ```
 
 2. Install dependencies:
