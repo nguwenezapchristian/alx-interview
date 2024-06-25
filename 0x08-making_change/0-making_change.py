@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+Making Change
+"""
 
 def makeChange(coins, total):
     """Edge case: if total is 0 or less, return 0"""
