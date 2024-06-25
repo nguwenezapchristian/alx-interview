@@ -2,13 +2,16 @@
 """ Making Change """
 
 
-def makeChange(coins, total):
+from typing import List
+
+
+def makeChange(coins: List[int], total: int) -> int:
     """
     Determine the minimum number of coins needed to meet a given total amount,
     given a pile of coins with different denominations.
 
     Args:
-        coins (list): List of the values of the coins in your possession.
+        coins (List[int]): List of the values of the coins in your possession.
         total (int): The total amount to be made up.
 
     Returns:
@@ -19,13 +22,15 @@ def makeChange(coins, total):
     if total <= 0:
         return 0
 
-    # Initialize the DP array with a size of (total + 1) and set all elements to a large value
+    """Initialize the DP array with a size of (total + 1) and set all
+    elements to a large value
+    """
     dp = [float('inf')] * (total + 1)
     dp[0] = 0
 
-    # Iterate over each coin
+    """Iterate over each coin and update the DP array"""
     for coin in coins:
-        # Update the DP array values for all amounts >= coin
+        """Update the DP array values for all amounts >= coin"""
         for amount in range(coin, total + 1):
             dp[amount] = min(dp[amount], dp[amount - coin] + 1)
 
