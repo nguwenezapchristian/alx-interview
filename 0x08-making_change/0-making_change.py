@@ -12,7 +12,9 @@ def makeChange(coins, total):
     """Populate the DP array"""
     for coin in coins:
         for amount in range(coin, total + 1):
-            dp[amount] = min(dp[amount], dp[amount - coin] + 1)
+            """Update the DP array"""
+            if dp[amount - coin] != float('inf'):
+                dp[amount] = min(dp[amount], dp[amount - coin] + 1)
 
     """If dp[total] is still infinity, return -1"""
     return dp[total] if dp[total] != float('inf') else -1
