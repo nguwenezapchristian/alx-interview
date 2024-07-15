@@ -1,70 +1,66 @@
-# N Queens Problem
+# N Queens
 
 ## Overview
 
-The N Queens problem is a classic problem in computer science and mathematics, where the objective is to place N queens on an N×N chessboard so that no two queens can attack each other. This project solves the N Queens problem using a backtracking algorithm implemented in Python.
+The N Queens problem is a classic computer science and mathematics problem that involves placing N non-attacking queens on an N×N chessboard. This project implements a solution using the backtracking algorithm in Python.
 
 ## Requirements
 
-- **Language**: Python 3.4.3
-- **OS**: Ubuntu 20.04 LTS
-- **Coding Style**: PEP 8 (version 1.7.*)
-- **File Requirements**:
-  - All Python files must start with the shebang `#!/usr/bin/python3`
-  - All files should end with a new line
-  - Files should be executable
+- Python 3.4.3
+- Ubuntu 20.04 LTS
+
+## Project Structure
+
+- `0-nqueens.py`: The main script to solve the N Queens problem.
+- `README.md`: This file, providing an overview of the project.
 
 ## Usage
 
-The main script to run the program is `0-nqueens.py`.
-
-### Command Line Arguments
-
-- `nqueens N`: where `N` is the size of the chessboard (must be an integer greater than or equal to 4).
-
-### Example
-
-To run the program with a 4×4 chessboard:
+The script should be executed from the command line with the following syntax:
 
 ```bash
-./0-nqueens.py 4
+./0-nqueens.py N
 ```
 
-### Output
+Where `N` is the size of the chessboard and the number of queens. `N` must be an integer greater than or equal to 4.
 
-The program will print all the possible solutions, one solution per line. Each solution is represented as a list of lists, where each inner list contains the row and column indices of a queen.
+### Examples
 
-Example output for `N = 4`:
-
-```plaintext
+```bash
+$ ./0-nqueens.py 4
 [[0, 1], [1, 3], [2, 0], [3, 2]]
 [[0, 2], [1, 0], [2, 3], [3, 1]]
+
+$ ./0-nqueens.py 6
+[[0, 1], [1, 3], [2, 5], [3, 0], [4, 2], [5, 4]]
+[[0, 2], [1, 5], [2, 1], [3, 4], [4, 0], [5, 3]]
+[[0, 3], [1, 0], [2, 4], [3, 1], [4, 5], [5, 2]]
+[[0, 4], [1, 2], [2, 0], [3, 5], [4, 3], [5, 1]]
 ```
 
-## Implementation Details
+### Error Handling
 
-### Backtracking Algorithm
-
-The backtracking algorithm is used to explore all potential configurations of queens on the board. It places queens one by one in different columns and checks for conflicts. If a conflict is found, it backtracks and tries another position.
-
-### Safety Check
-
-The `is_safe` function checks whether a queen can be placed at a given position without being attacked by other queens. It checks the current row, upper diagonal, and lower diagonal on the left side.
-
-### Main Function
-
-The `solve_nqueens` function initializes the chessboard and starts the backtracking process. It collects all valid solutions and prints them.
-
-## Running the Script
-
-Make sure to set executable permissions for the script:
+- If the wrong number of arguments is provided:
 
 ```bash
-chmod +x 0-nqueens.py
+$ ./0-nqueens.py
+Usage: nqueens N
 ```
 
-Then, run the script with the desired board size:
+- If `N` is not an integer:
 
 ```bash
-./0-nqueens.py 6
+$ ./0-nqueens.py not_a_number
+N must be a number
 ```
+
+- If `N` is less than 4:
+
+```bash
+$ ./0-nqueens.py 3
+N must be at least 4
+```
+
+## Author
+
+[Nguweneza P Christian]
