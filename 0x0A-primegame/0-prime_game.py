@@ -2,6 +2,8 @@
 """
 Prime Game
 """
+
+
 def isWinner(x, nums):
     """
     Determines if a player can win the game
