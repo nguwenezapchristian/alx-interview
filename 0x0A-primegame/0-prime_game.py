@@ -1,9 +1,18 @@
 #!/usr/bin/python3
+"""
+Prime Game
+"""
 def isWinner(x, nums):
+    """
+    Determines if a player can win the game
+    """
     if not nums or x < 1:
         return None
 
     def sieve(max_n):
+        """
+        Sieve of Eratosthenes
+        """
         primes = [True] * (max_n + 1)
         primes[0] = primes[1] = False
         p = 2
@@ -18,6 +27,9 @@ def isWinner(x, nums):
     primes = sieve(max_n)
 
     def count_prime_multiples(n, primes):
+        """
+        Count the number of prime multiples
+        """
         count = 0
         is_prime_multiple = [False] * (n + 1)
         for prime in primes:
