@@ -4,7 +4,8 @@
 
 def island_perimeter(grid):
     """
-    Calculate the perimeter of an island represented by 1s in a grid of 0s and 1s.
+    Calculate the perimeter of an island represented by 1s in
+    a grid of 0s and 1s.
 
     Args:
         grid (list of list of int): 2D list representing the grid.
